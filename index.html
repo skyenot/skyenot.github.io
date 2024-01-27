@@ -1,26 +1,492 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>skyenot - Full Stack разработка</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --main-bg-color: #f7f7f7;
+                --accent-bg-color: #ffd4d0;
+                --red-color: #fc3314;
+                --black-color: #1f1f1f;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skyenot</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: 'Comfortaa', sans-serif;
-        }
-    </style>
-</head>
+            .red {
+                color: var(--red-color);
+            }
 
-<body>
-    <div style='display: flex; min-height: 100vh; align-items: center; justify-content: center;'>
-        skyenot
-    </div>
-</body>
+            * {
+                font-family: 'Montserrat', sans-serif;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                user-select: none;
+            }
 
+            html {
+                color: #000;
+                font-size: 16px;
+                scroll-behavior: smooth;
+            }
+
+            .container {
+                margin: 0 auto;
+                max-width: 1192px;
+            }
+
+            header {
+                background-color: var(--accent-bg-color);
+                position: relative;
+                z-index: 0;
+
+                .circle {
+                    background-color: var(--red-color);
+                    border-radius: 50%;
+                    height: 140px;
+                    position: absolute;
+                    top: -80px;
+                    left: 33%;
+                    width: 140px;
+                    z-index: 1;
+                }
+
+                nav {
+                    align-items: center;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 40px 0;
+                    position: relative;
+                    z-index: 2;
+
+                    .logo {
+                        display: flex;
+                        color: #000;
+                        font-family: 'Comfortaa', sans-serif;
+                        font-size: 1.75rem;
+                        font-weight: 700;
+                    }
+
+                    .links {
+                        display: flex;
+                        font-size: large;
+                        font-weight: 700;
+                        gap: 16px;
+
+                        a {
+                            color: #000;
+                            padding: 4px 12px;
+                        }
+
+                        a:hover {
+                            background-color: rgba(255, 255, 255, 0.5);
+                        }
+                    }
+
+                    .button {
+                        background-color: var(--black-color);
+                        color: #fff;
+                        cursor: pointer;
+                        font-weight: 700;
+                        padding: 12px 24px;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    gap: 48px;
+                    justify-content: space-between;
+
+                    .section {
+                        margin: 64px 0 80px;
+                        width: 44%;
+
+                        .heading {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+
+                            h2 {
+                                font-size: 1.25rem;
+                                font-weight: 400;
+                            }
+
+                            h1 {
+                                font-size: 3rem;
+                            }
+                        }
+
+                        .ctas {
+                            margin-top: 48px;
+
+                            .button {
+                                background-color: var(--black-color);
+                                color: #fff;
+                                cursor: pointer;
+                                font-weight: 700;
+                                padding: 12px 0;
+                                width: 170px;
+                            }
+                            .button.secondary {
+                                background-color: #fff;
+                                border: 1px solid #000;
+                                color: var(--black-color);
+                                display: inline-block;
+                                margin-left: 20px;
+                                text-align: center;
+                            }
+                        }
+                    }
+
+                    .image {
+                        max-width: 50%;
+                        max-height: 420px;
+
+                        img {
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+
+            .about {
+                background-color: var(--black-color);
+                color: #fff;
+                padding: 64px 0 80px;
+                position: relative;
+                text-align: center;
+                z-index: 0;
+
+                h2 {
+                    font-size: 2.25rem;
+                }
+
+                p {
+                    margin: 24px 160px 0;
+                }
+
+                .numbers {
+                    display: flex;
+                    justify-content: space-evenly;
+                    margin-top: 32px;
+                    z-index: 3;
+
+                    .number {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        width: 100px;
+
+                        h3 {
+                            color: var(--accent-bg-color);
+                            font-size: 4rem;
+                        }
+
+                        h4 {
+                            font-size: 1.125rem;
+                        }
+                    }
+                }
+
+                .circle {
+                    background-color: var(--red-color);
+                    border-radius: 50%;
+                    height: 240px;
+                    position: absolute;
+                    bottom: -170px;
+                    left: calc(50% - 120px);
+                    width: 240px;
+                    z-index: 1;
+                }
+            }
+
+            .services {
+                background-color: #fff;
+                color: #000;
+                padding: 64px 0;
+                position: relative;
+                text-align: center;
+
+                h2 {
+                    font-size: 2.25rem;
+                }
+
+                p {
+                    margin: 24px 160px 0;
+                }
+
+                .services {
+                    display: flex;
+                    gap: 32px;
+                    justify-content: space-between;
+                    margin-top: 32px;
+                    text-align: left;
+
+                    .service {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        padding: 16px;
+                        align-self: first baseline;
+
+                        img {
+                            height: 60px;
+                            width: fit-content;
+                        }
+
+                        h4 {
+                            font-size: 1.125rem;
+                        }
+
+                        h5 {
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+
+            .portfolio {
+                background: linear-gradient(
+                    to bottom,
+                    var(--accent-bg-color) 0%,
+                    var(--accent-bg-color) 280px,
+                    var(--main-bg-color) 280px,
+                    var(--main-bg-color) 100%
+                );
+                color: #000;
+                padding: 64px 0;
+                position: relative;
+                text-align: center;
+
+                h2 {
+                    font-size: 2.25rem;
+                }
+
+                p {
+                    margin: 24px 160px 0;
+                }
+
+                .grid-container {
+                    display: grid;
+                    gap: 64px;
+                    grid-auto-rows: minmax(180px, auto);
+                    grid-template-columns: repeat(3, 322px);
+                    margin-top: 40px;
+                    text-align: left;
+
+                    .grid {
+                        /* background-color: aliceblue; */
+                        position: relative;
+
+                        > img {
+                            border: 1px solid #000;
+                            display: block;
+                            width: 320px;
+                            height: 180px;
+                            object-fit: contain;
+                        }
+
+                        h4 {
+                            font-size: 1.25rem;
+                            margin-top: 32px;
+                        }
+
+                        h5 {
+                            font-size: 0.875rem;
+                            font-weight: 400;
+                            margin-top: 16px;
+                        }
+
+                        .buttons {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+
+                            img {
+                                width: 32px;
+                                height: 32px;
+                                object-fit: contain;
+                            }
+
+                            img:hover {
+                                background-color: #fff;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .up {
+                background-color: #fff;
+                border-radius: 24px;
+                position: fixed;
+                bottom: 32px;
+                right: 32px;
+                padding: 4px 4px 0;
+
+                img {
+                    height: 64px;
+                    width: 64px;
+                }
+            }
+        </style>
+        <script>
+            function writeMessage() {
+                open('https://t.me/skyenot')
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="circle"></div>
+                <nav>
+                    <a href="/#" class="logo">
+                        <span>sky</span>
+                        <span class="red">enot</span>
+                    </a>
+                    <div class="links">
+                        <a href="/#about">Кто я?</a>
+                        <a href="/#services">Услуги</a>
+                        <a href="/#portfolio">Портфолио</a>
+                        <!-- <a href="#blog">Блог</a> -->
+                    </div>
+                    <input onclick="writeMessage()" class="button" type="button" value="Поговорим?" />
+                </nav>
+                <div class="content">
+                    <div class="section">
+                        <div class="heading">
+                            <h2>Full Stack разработчик</h2>
+                            <div>
+                                <h1>Привет, это <span class="red">skyenot</span></h1>
+                            </div>
+                            <p>
+                                Добро пожаловать в моё портфолио веб-приложений. Приглашаю Вас ознакомиться с моими
+                                работами и работать вместе над чем-то новым.
+                            </p>
+                        </div>
+                        <div class="ctas">
+                            <input onclick="writeMessage()" class="button" type="button" value="Написать" />
+                            <a class="button secondary" href="/#portfolio">Портфолио</a>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <img src="/img/skyenot.png" title="Енотик-скуф" alt="Енот" width="100%" height="100%" />
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2>Кто я?</h2>
+                <p>
+                    Я <strong>skyenot</strong>, Full Stack веб-разработчик. Моя экспертиза включает в себя разработку
+                    современных веб-приложений с использованием технологий, таких как React, Vue и Next, но не
+                    ограничивается ими. Я внимателен к деталям и стремлюсь к совершенству в каждом проекте.
+                </p>
+                <div class="numbers">
+                    <div class="number">
+                        <h3>15+</h3>
+                        <h4>проектов</h4>
+                    </div>
+                    <div class="number">
+                        <h3>3+</h3>
+                        <h4>лет опыта</h4>
+                    </div>
+                    <div class="number">
+                        <h3>10+</h3>
+                        <h4>клиентов</h4>
+                    </div>
+                </div>
+                <div class="circle"></div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Услуги</h2>
+                <p>
+                    Ознакомьтесь с моими услугами в сфере Full Stack разработки: от фронтенда и дизайна
+                    пользовательского интерфейса до бэкенда и работы с базами данных.
+                </p>
+                <div class="services">
+                    <div class="service">
+                        <img src="/img/landing_page.svg" alt="Лендинг иконка" />
+                        <h4>Лендинг</h4>
+                        <h5>Создам продающий одностраничный сайт с уникальным дизайном или по вашему макету.</h5>
+                    </div>
+                    <div class="service">
+                        <img src="/img/shopping_cart.svg" alt="Корзина иконка" />
+                        <h4>Онлайн-магазин</h4>
+                        <h5>Создам интернет-магазин с поддержкой корзины, оплаты и управления заказами.</h5>
+                    </div>
+                    <div class="service">
+                        <img src="/img/key.svg" alt="Ключ иконка" />
+                        <h4>Приложение под ключ</h4>
+                        <h5>
+                            Полный цикл разработки с уникальным дизайном, адаптивностью и высокой производительностью.
+                        </h5>
+                    </div>
+                    <div class="service">
+                        <img src="/img/telegram.svg" alt="Бот иконка" />
+                        <h4>Бот</h4>
+                        <h5>Создам несложный Telegram или VK бот. Может быть дополнением к уже готовому продукту.</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <h2>Моё портфолио</h2>
+                <p>
+                    Здесь Вы можете увидеть мои последние проекты. У некоторых приложений есть демо-версия и/или ссылка
+                    на код на GitHub.
+                </p>
+                <div class="grid-container">
+                    <div class="grid">
+                        <img src="" alt="f" />
+                        <h4>Название</h4>
+                        <h5>Категория</h5>
+                        <div class="buttons">
+                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
+                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <img src="" alt="f" />
+                        <h4>Название</h4>
+                        <h5>Категория</h5>
+                        <div class="buttons">
+                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
+                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <img src="" alt="f" />
+                        <h4>Название</h4>
+                        <h5>Категория</h5>
+                        <div class="buttons">
+                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
+                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a class="up" href="#">
+            <img src="/img/up.svg" alt="Стрелка вверх" />
+        </a>
+    </body>
 </html>
