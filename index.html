@@ -10,334 +10,7 @@
             href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
         />
-        <style>
-            :root {
-                --main-bg-color: #f7f7f7;
-                --accent-bg-color: #ffd4d0;
-                --red-color: #fc3314;
-                --black-color: #1f1f1f;
-            }
-
-            .red {
-                color: var(--red-color);
-            }
-
-            * {
-                font-family: 'Montserrat', sans-serif;
-                margin: 0;
-                padding: 0;
-                text-decoration: none;
-                user-select: none;
-            }
-
-            html {
-                color: #000;
-                font-size: 16px;
-                scroll-behavior: smooth;
-            }
-
-            .container {
-                margin: 0 auto;
-                max-width: 1192px;
-            }
-
-            header {
-                background-color: var(--accent-bg-color);
-                position: relative;
-                z-index: 0;
-
-                .circle {
-                    background-color: var(--red-color);
-                    border-radius: 50%;
-                    height: 140px;
-                    position: absolute;
-                    top: -80px;
-                    left: 33%;
-                    width: 140px;
-                    z-index: 1;
-                }
-
-                nav {
-                    align-items: center;
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 40px 0;
-                    position: relative;
-                    z-index: 2;
-
-                    .logo {
-                        display: flex;
-                        color: #000;
-                        font-family: 'Comfortaa', sans-serif;
-                        font-size: 1.75rem;
-                        font-weight: 700;
-                    }
-
-                    .links {
-                        display: flex;
-                        font-size: large;
-                        font-weight: 700;
-                        gap: 16px;
-
-                        a {
-                            color: #000;
-                            padding: 4px 12px;
-                        }
-
-                        a:hover {
-                            background-color: rgba(255, 255, 255, 0.5);
-                        }
-                    }
-
-                    .button {
-                        background-color: var(--black-color);
-                        color: #fff;
-                        cursor: pointer;
-                        font-weight: 700;
-                        padding: 12px 24px;
-                    }
-                }
-
-                .content {
-                    display: flex;
-                    gap: 48px;
-                    justify-content: space-between;
-
-                    .section {
-                        margin: 64px 0 80px;
-                        width: 44%;
-
-                        .heading {
-                            display: flex;
-                            flex-direction: column;
-                            gap: 16px;
-
-                            h2 {
-                                font-size: 1.25rem;
-                                font-weight: 400;
-                            }
-
-                            h1 {
-                                font-size: 3rem;
-                            }
-                        }
-
-                        .ctas {
-                            margin-top: 48px;
-
-                            .button {
-                                background-color: var(--black-color);
-                                color: #fff;
-                                cursor: pointer;
-                                font-weight: 700;
-                                padding: 12px 0;
-                                width: 170px;
-                            }
-                            .button.secondary {
-                                background-color: #fff;
-                                border: 1px solid #000;
-                                color: var(--black-color);
-                                display: inline-block;
-                                margin-left: 20px;
-                                text-align: center;
-                            }
-                        }
-                    }
-
-                    .image {
-                        max-width: 50%;
-                        max-height: 420px;
-
-                        img {
-                            object-fit: contain;
-                        }
-                    }
-                }
-            }
-
-            .about {
-                background-color: var(--black-color);
-                color: #fff;
-                padding: 64px 0 80px;
-                position: relative;
-                text-align: center;
-                z-index: 0;
-
-                h2 {
-                    font-size: 2.25rem;
-                }
-
-                p {
-                    margin: 24px 160px 0;
-                }
-
-                .numbers {
-                    display: flex;
-                    justify-content: space-evenly;
-                    margin-top: 32px;
-                    z-index: 3;
-
-                    .number {
-                        align-items: center;
-                        display: flex;
-                        flex-direction: column;
-                        width: 100px;
-
-                        h3 {
-                            color: var(--accent-bg-color);
-                            font-size: 4rem;
-                        }
-
-                        h4 {
-                            font-size: 1.125rem;
-                        }
-                    }
-                }
-
-                .circle {
-                    background-color: var(--red-color);
-                    border-radius: 50%;
-                    height: 240px;
-                    position: absolute;
-                    bottom: -170px;
-                    left: calc(50% - 120px);
-                    width: 240px;
-                    z-index: 1;
-                }
-            }
-
-            .services {
-                background-color: #fff;
-                color: #000;
-                padding: 64px 0;
-                position: relative;
-                text-align: center;
-
-                h2 {
-                    font-size: 2.25rem;
-                }
-
-                p {
-                    margin: 24px 160px 0;
-                }
-
-                .services {
-                    display: flex;
-                    gap: 32px;
-                    justify-content: space-between;
-                    margin-top: 32px;
-                    text-align: left;
-
-                    .service {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                        padding: 16px;
-                        align-self: first baseline;
-
-                        img {
-                            height: 60px;
-                            width: fit-content;
-                        }
-
-                        h4 {
-                            font-size: 1.125rem;
-                        }
-
-                        h5 {
-                            font-size: 0.875rem;
-                            font-weight: 400;
-                        }
-                    }
-                }
-            }
-
-            .portfolio {
-                background: linear-gradient(
-                    to bottom,
-                    var(--accent-bg-color) 0%,
-                    var(--accent-bg-color) 280px,
-                    var(--main-bg-color) 280px,
-                    var(--main-bg-color) 100%
-                );
-                color: #000;
-                padding: 64px 0;
-                position: relative;
-                text-align: center;
-
-                h2 {
-                    font-size: 2.25rem;
-                }
-
-                p {
-                    margin: 24px 160px 0;
-                }
-
-                .grid-container {
-                    display: grid;
-                    gap: 64px;
-                    grid-auto-rows: minmax(180px, auto);
-                    grid-template-columns: repeat(3, 322px);
-                    margin-top: 40px;
-                    text-align: left;
-
-                    .grid {
-                        /* background-color: aliceblue; */
-                        position: relative;
-
-                        > img {
-                            border: 1px solid #000;
-                            display: block;
-                            width: 320px;
-                            height: 180px;
-                            object-fit: contain;
-                        }
-
-                        h4 {
-                            font-size: 1.25rem;
-                            margin-top: 32px;
-                        }
-
-                        h5 {
-                            font-size: 0.875rem;
-                            font-weight: 400;
-                            margin-top: 16px;
-                        }
-
-                        .buttons {
-                            position: absolute;
-                            bottom: 0;
-                            right: 0;
-
-                            img {
-                                width: 32px;
-                                height: 32px;
-                                object-fit: contain;
-                            }
-
-                            img:hover {
-                                background-color: #fff;
-                                border-radius: 50%;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .up {
-                background-color: #fff;
-                border-radius: 24px;
-                position: fixed;
-                bottom: 32px;
-                right: 32px;
-                padding: 4px 4px 0;
-
-                img {
-                    height: 64px;
-                    width: 64px;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="/style.css" />
         <script>
             function writeMessage() {
                 open('https://t.me/skyenot')
@@ -412,7 +85,7 @@
             </div>
         </section>
 
-        <section class="services" id="services">
+        <section class="x-services" id="services">
             <div class="container">
                 <h2>Услуги</h2>
                 <p>
@@ -421,25 +94,33 @@
                 </p>
                 <div class="services">
                     <div class="service">
-                        <img src="/img/landing_page.svg" alt="Лендинг иконка" />
-                        <h4>Лендинг</h4>
+                        <div>
+                            <img src="/img/icons/landing_page.svg" alt="Лендинг иконка" />
+                            <h4>Лендинг</h4>
+                        </div>
                         <h5>Создам продающий одностраничный сайт с уникальным дизайном или по вашему макету.</h5>
                     </div>
                     <div class="service">
-                        <img src="/img/shopping_cart.svg" alt="Корзина иконка" />
-                        <h4>Онлайн-магазин</h4>
+                        <div>
+                            <img src="/img/icons/shopping_cart.svg" alt="Корзина иконка" />
+                            <h4>Онлайн-магазин</h4>
+                        </div>
                         <h5>Создам интернет-магазин с поддержкой корзины, оплаты и управления заказами.</h5>
                     </div>
                     <div class="service">
-                        <img src="/img/key.svg" alt="Ключ иконка" />
-                        <h4>Приложение под ключ</h4>
+                        <div>
+                            <img src="/img/icons/key.svg" alt="Ключ иконка" />
+                            <h4>Приложение под ключ</h4>
+                        </div>
                         <h5>
                             Полный цикл разработки с уникальным дизайном, адаптивностью и высокой производительностью.
                         </h5>
                     </div>
                     <div class="service">
-                        <img src="/img/telegram.svg" alt="Бот иконка" />
-                        <h4>Бот</h4>
+                        <div>
+                            <img src="/img/icons/telegram.svg" alt="Бот иконка" />
+                            <h4>Бот</h4>
+                        </div>
                         <h5>Создам несложный Telegram или VK бот. Может быть дополнением к уже готовому продукту.</h5>
                     </div>
                 </div>
@@ -450,43 +131,134 @@
             <div class="container">
                 <h2>Моё портфолио</h2>
                 <p>
-                    Здесь Вы можете увидеть мои последние проекты. У некоторых приложений есть демо-версия и/или ссылка
-                    на код на GitHub.
+                    Здесь Вы можете увидеть некоторые из моих последних проектов. У некоторых приложений есть
+                    демо-версия и/или ссылка на код на GitHub.
                 </p>
                 <div class="grid-container">
                     <div class="grid">
-                        <img src="" alt="f" />
-                        <h4>Название</h4>
-                        <h5>Категория</h5>
+                        <img
+                            src="/img/vk-mutual.png"
+                            alt="VK Mutual (чем больше общих друзей у списка справа с людьми из списка слева - тем ярче подсветка)"
+                        />
+                        <h4>Общие друзья ВК</h4>
+                        <h5>SPA • Vue.js • VK API</h5>
                         <div class="buttons">
-                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
-                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                            <a href="https://github.com/skyenot/vk-mutual" target="_blank"
+                                ><img src="/img/icons/github.svg" alt="Код" title="Код"
+                            /></a>
+                            <a href="https://skyenot.online/vk-mutual" target="_blank"
+                                ><img src="/img/icons/arrow_right_up.svg" alt="Демо" title="Демо"
+                            /></a>
                         </div>
                     </div>
                     <div class="grid">
-                        <img src="" alt="f" />
-                        <h4>Название</h4>
-                        <h5>Категория</h5>
+                        <img src="/img/koumiss.png" alt="Кумыс (рофло-лендинг о пользе кумыса)" />
+                        <h4>Кумыс</h4>
+                        <h5>Лендинг • Дизайн с нуля</h5>
                         <div class="buttons">
-                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
-                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                            <a href="https://github.com/skyenot/koumiss" target="_blank"
+                                ><img src="/img/icons/github.svg" alt="Код" title="Код"
+                            /></a>
+                            <a href="https://skyenot.online/koumiss" target="_blank"
+                                ><img src="/img/icons/arrow_right_up.svg" alt="Демо" title="Демо"
+                            /></a>
                         </div>
                     </div>
                     <div class="grid">
-                        <img src="" alt="f" />
-                        <h4>Название</h4>
-                        <h5>Категория</h5>
+                        <img
+                            src="/img/whats-api.png"
+                            alt="Whats API (онлайн-чат с несколькими пользователями WhatsApp с помощью стороннего API - GreenAPI)"
+                        />
+                        <h4>Чаты WhatsApp</h4>
+                        <h5>SPA • React • Green API</h5>
                         <div class="buttons">
-                            <a href="/#"><img src="/img/github.svg" alt="Код" title="Код" /></a>
-                            <a href="/#"><img src="/img/arrow_right_up.svg" alt="Демо" title="Демо" /></a>
+                            <a href="https://github.com/skyenot/whats-api" target="_blank"
+                                ><img src="/img/icons/github.svg" alt="Код" title="Код"
+                            /></a>
+                            <a href="https://skyenot.online/whats-api" target="_blank"
+                                ><img src="/img/icons/arrow_right_up.svg" alt="Демо" title="Демо"
+                            /></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <a class="up" href="#">
-            <img src="/img/up.svg" alt="Стрелка вверх" />
+        <footer id="footer">
+            <a href="/#" class="logo">
+                <span>sky</span>
+                <span class="red">enot</span>
+            </a>
+            <div class="social">
+                <p>Полезные ссылки</p>
+                <div>
+                    <a href="https://t.me/skyenot" target="_blank"
+                        ><img src="/img/icons/telegram.svg" alt="Telegram" /> / <strong>skyenot</strong></a
+                    >
+                    <a href="https://zelenka.guru/skyenot" target="_blank"
+                        ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            version="1.1"
+                            x="0px"
+                            y="0px"
+                            viewBox="0 0 90 40"
+                            style="enable-background: new 0 0 90 40; transform: scale(1.5)"
+                            xml:space="preserve"
+                        >
+                            <style type="text/css">
+                                .st0 {
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                    fill: #000;
+                                }
+                            </style>
+                            <path
+                                class="st0"
+                                d="M49,31V13h15.1l4-4H16v4h17L21,32h-8V9H9v27h59l-4-4H49V31 M26,32h19v-1V13h-7L26,32z"
+                            />
+                        </svg>
+                        / <strong>skyenot</strong></a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <div id="modal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modal-img" />
+            <div id="caption"></div>
+        </div>
+
+        <a class="up" href="/#">
+            <img src="/img/icons/up.svg" alt="Стрелка вверх" />
         </a>
+
+        <script>
+            const modal = document.getElementById('modal')
+
+            const images = document.querySelectorAll('.portfolio .grid > img')
+            images.forEach((image) => {
+                image.addEventListener('click', ({ target }) => {
+                    const modalImg = document.getElementById('modal-img')
+                    const caption = document.getElementById('caption')
+                    modal.style.display = 'block'
+                    modalImg.src = target.src
+                    caption.innerHTML = target.alt
+                })
+            })
+
+            const close = document.getElementsByClassName('close')[0]
+
+            close.addEventListener('click', () => {
+                modal.style.display = 'none'
+            })
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none'
+                }
+            })
+        </script>
     </body>
 </html>
